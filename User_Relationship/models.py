@@ -1,16 +1,6 @@
 from django.db import models
 from Authentication.models import CustomUser
 
-
-# LIKE= 'like'
-# UNLIKE = 'unlike'
-# REACTION_CHOICES = [
-#         (LIKE, 'Like'),
-#         (UNLIKE, 'Unlike')
-#     ]
-
-from django.db import models
-
 class UserRelationship(models.Model):
     follower = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='following_relationships')
     followed = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='follower_relationships')
